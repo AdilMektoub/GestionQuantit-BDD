@@ -1,7 +1,6 @@
 package Collection;
 
-		//je crée classe produit ( un produit est caractérisé par son id, son noms)
-public interface Produit {
+public class Produit {
 
 	//dans la classe test je crée une Hashmap qui s'appelle STOCK contient clé = Produit / valeur = quantité
 	//dans la classe test je crée 2 méthode qui permettent d'AUGMENTER ou de DIMINUER la quantité d'un produit dans le stock
@@ -9,9 +8,27 @@ public interface Produit {
 
 //	private int id;
 //	private String nom;
+	private String id;
+	private String nomProduit;
 	
-	void Augmenter(int Quantite);
-	void Diminuer (int Qauntite);
-	void Acheter (Produit produit, int Quantite);
-
-}	
+	public Produit(String id, String nomProduit) {
+		this.id = id;
+		this.nomProduit = nomProduit;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getNomProduit() {
+		return nomProduit;
+	}
+	public void setNomProduit(String nomProduit) {
+		this.nomProduit = nomProduit;
+	}
+	public void acheter(Produit p, int quantite)
+	{
+		System.out.println("je vais acheter "+quantite+" "+p.getNomProduit());
+	}
+}
